@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Proyecto X</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.sidebarBtn').click(function(){
+                    $('.sidebar').toggleClass('active');
+                })
+            })
+        </script>
+    </head>
+    <body class="theme">
+        <h1>Proyecto X</h1>
+        <div class="sidebar">
+            <ul>
+                <li><a href="">Tareas</a></li>
+                <li><a href="">Calificaciones</a></li>
+                <li><a href="">Calendario</a></li>
+                <li><a href="">Temario</a></li>
+                <li><a href="">Estadística</a></li>
+                <li><a href="">Mensaje</a></li>
+            </ul>
+            <button type="submit" class="sidebarBtn">
+                <span>
+                    <a href="Login.html">Back</a>
+                </span>
+            </button>
+        </div>
+        <div class="login">
+            <p>Aqui en el mar azul</p>
+        </div>
+    </body>
+</html>
