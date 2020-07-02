@@ -26,7 +26,7 @@ body {
     top: 0;
     left: 0px;
     background: #FACEE5;
-    width: 250px;
+    width: 150px;
     height: 100%;
     transition: .3s;
 }
@@ -37,7 +37,7 @@ body {
 
 .sidebar ul {
     margin: 0px;
-    padding: 20px 65px;
+    padding: 0px 5px;
 }
 
 ul li {
@@ -49,6 +49,7 @@ ul li {
     color:  rgb(237, 128, 168);
     display: block;
     text-decoration: none;
+    text-align: center;
     border-bottom: 1px solid rgb(237, 128, 168);
 }
 
