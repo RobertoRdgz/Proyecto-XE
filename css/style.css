@@ -35,8 +35,8 @@ body {
     left: 710px;
 }
 
-ul {
-    margin: 0;
+.sidebar ul {
+    margin: 0px;
     padding: 20px 65px;
 }
 
@@ -44,12 +44,53 @@ ul li {
     list-style: none;
 }
 
-ul li a {
-    padding: 10px 20px;
+.sidebarMenu li a {
+    padding: 15px 20px;
     color:  rgb(237, 128, 168);
     display: block;
     text-decoration: none;
     border-bottom: 1px solid rgb(237, 128, 168);
+}
+
+.sidebarMenu a.activado {
+    background-color: #CEECFA;
+    color: #ed80a8;
+}
+
+.sidebarMenu {
+    margin-top: 50px;
+}
+
+.sidebar a:hover {
+    background-color: #CEECFA;
+    color: black;
+}
+
+.sidebarLogo {
+    text-decoration: none;
+    font-size: 30px;
+    position: absolute;
+    top: 20px;
+    right: 95px;
+    width: 100px;
+    height: 30px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: #ed80a8;
+    border: none;
+    outline: none;
+}
+
+.sidebarLogo span {
+    font-family: cursive;
+    display: block;
+    width: 90px;
+    height: 20px;
+    background: #FACEE5;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transition: .3s;
 }
 
 .sidebarBtn {
@@ -85,16 +126,6 @@ ul li a {
     width: 100%;
     height: 3px;
     background: black;
-}
-
-.sidebarBtn span:before {
-    content: '';
-    position: absolute;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: black;
     transition: .3s;
 }
 
@@ -107,4 +138,32 @@ ul li a {
     height: 3px;
     background: black;
     transition: .3s;
+}
+
+/* Add a black background color to the top navigation */
+.topbar {
+    background-color: #FACEE5;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topbar a {
+    float: right;
+    color: #ed80a8;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topbar a:hover {
+    background-color: #CEECFA;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topbar a.activado {
+    background-color: #4CAF50;
+    color: white;
 }
