@@ -3,10 +3,6 @@ h1 {
     font-style: italic;
 }
 
-.login {
-    text-align: center;
-}
-
 .sidebarBtn {
     background-color:#ed80a8;
     color: black;
@@ -17,31 +13,35 @@ body {
     margin: 0;
     padding: 0;
     font-family: Verdana;
-    background: #CEECFA;
+    background: rgb(238, 235, 217);
     overflow: hidden;
 }
 
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0px;
-    background: #FACEE5;
-    width: 150px;
+    position: absolute;
+    float: left;
+    top: 0px;
+    background: #5b6260;
+    width: 200px;
     height: 100%;
     transition: .3s;
 }
 
 .active {
-    left: 710px;
+    left: 700px;
 }
 
 .sidebar ul {
     margin: 0px;
-    padding: 0px 5px;
+    padding: 0px 0px;
 }
 
 ul li {
     list-style: none;
+}
+
+.sidebarMenu {
+    margin-top: 67px;
 }
 
 .sidebarMenu li a {
@@ -53,45 +53,32 @@ ul li {
     border-bottom: 1px solid rgb(237, 128, 168);
 }
 
-.sidebarMenu a.activado {
-    background-color: #CEECFA;
-    color: #ed80a8;
-}
-
-.sidebarMenu {
-    margin-top: 50px;
-}
-
-.sidebar a:hover {
-    background-color: #CEECFA;
+.sidebarMenu a:hover {
+    background-color: rgb(238, 235, 217);
     color: black;
 }
 
+.sidebarLogo a {
+    top: 0px;
+}
 .sidebarLogo {
     text-decoration: none;
     font-size: 30px;
     position: absolute;
-    top: 20px;
-    right: 95px;
-    width: 100px;
-    height: 30px;
+    top: 15px;
+    right: 0px;
+    width: 200px;
+    height: 50px;
     box-sizing: border-box;
     cursor: pointer;
-    background: #ed80a8;
+    background: #5b6260;
+    width: 200px;
     border: none;
     outline: none;
 }
 
-.sidebarLogo span {
-    font-family: cursive;
-    display: block;
-    width: 90px;
-    height: 20px;
-    background: #FACEE5;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    transition: .3s;
+.sidebarLogo a {
+    text-align: center;
 }
 
 .sidebarBtn {
@@ -143,8 +130,13 @@ ul li {
 
 /* Add a black background color to the top navigation */
 .topbar {
-    background-color: #FACEE5;
+    padding: 0px 0px;
+    background-color: #5b6260;
     overflow: hidden;
+}
+
+.topbar ul {
+    padding: 0px 0px;
 }
 
 /* Style the links inside the navigation bar */
@@ -159,12 +151,13 @@ ul li {
 
 /* Change the color of links on hover */
 .topbar a:hover {
-    background-color: #CEECFA;
+    background-color: rgb(238, 235, 217);
     color: black;
 }
 
-/* Add a color to the active/current link */
-.topbar a.activado {
-    background-color: #4CAF50;
-    color: white;
+.notificaciones {
+    float: right;
+    width: 200px;
+    height: 200px;
+    text-align: center;
 }
