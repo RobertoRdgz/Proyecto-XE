@@ -189,23 +189,6 @@ main {
 }
 
 /* topbar css */
-.topbar {
-    height: 5rem;
-    width: 100%;
-    background: var(--bg-primary);
-}
-
-.topnavbar-nav {
-    float: right;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 100%;
-}
-
 .topnav-link {
     display: flex;
     align-items: center;
@@ -217,12 +200,6 @@ main {
     transition: var(--transition-speed);
 }
 
-.toplink-text {
-    display: none;
-    margin-left: 1rem;
-}
-
-
 .topnav-link svg {
     width: 2rem;
     min-width: 2rem;
@@ -231,19 +208,11 @@ main {
 
 
 
-
-
-
-
-
-
-
-
 .topnav {
   height: 5rem;
   width: 100%;
   overflow: hidden;
-  background-color: #333;
+  background: var(--bg-primary);
 }
 
 .topnav a {
