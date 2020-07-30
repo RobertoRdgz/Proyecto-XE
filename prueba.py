@@ -21,7 +21,13 @@ mylist = [
     {"_id": 14, "name": "Viola", "address": "Sideway 1633"}
 ]
 
-x = mycol.insert_many(mylist)
+try:
+    x = mycol.insert_many(mylist)
+    print(x.inserted_ids)
+except pymongo.errors.BulkWriteError:
+    print("Tas pendejo eso ya esta X.X")
+except:
+    print("Wey la no se que pedo")
 
 #print list of the _id values of the inserted documents:
-print(x.inserted_ids)
+
