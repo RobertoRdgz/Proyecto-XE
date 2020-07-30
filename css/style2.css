@@ -259,7 +259,6 @@ main {
 
 .dropdown {
   float: right;
-  overflow: hidden;
 }
 
 .dropdown .dropbtn {
@@ -280,8 +279,10 @@ main {
   min-width: 300px;
   min-height: 300px;
   box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.2);
-  z-index: 0;
+  z-index: 1;
+  right: 0;
 }
+
 
 .dropdown-content a {
   float: none;
