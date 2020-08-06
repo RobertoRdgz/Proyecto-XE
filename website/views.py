@@ -8,6 +8,10 @@ from django.conf import settings
 from django.http import HttpResponse, Http404
 from django.db import transaction
 
+#import logging
+
+
+
 # Create your views here.
 def home(request):
     print('Ya vamos a jugar fornai')
