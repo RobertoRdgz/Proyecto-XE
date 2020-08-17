@@ -1,0 +1,114 @@
+{% comment %} Para cargar las IMG de static {% endcomment %}
+{% load static %}
+
+<!--header start-->
+<header class="header white-bg shadow-sm">
+
+    {% if request.session.mostrarMenu %}
+        <div class="sidebar-toggle-box">
+            <i class="fa fa-bars"></i>
+        </div>
+    {% endif %}
+    <!--logo start-->
+    <!--logo end-->
+    <div class="nav notify-row  pull-right" id="top_menu">
+        <!--  notification start -->
+        <ul class="nav top-menu">
+            <!-- inbox dropdown start-->
+            <li id="header_inbox_bar" class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <i class="far fa-clipboard-list-check"></i>
+                    <span class="badge bg-primary">{{ navbar_numero_tareas }}</span>
+                </a>
+                <ul class="dropdown-menu extended notification">
+                    <div class="notify-arrow notify-arrow-purple"></div>
+                    <li>
+                        <p class="purple">Tienes {{ navbar_numero_tareas }} nuevas tareas</p>
+                    </li>
+                    {% if navbar_tareas %}
+                        {% for tarea in navbar_tareas %}
+                            <li class="row">
+                                <div class="col-lg-9 pull-right"> 
+                                <a href="" class="text-secondary"><i class="fad fa-bell-exclamation text-success fa-lg"></i> OLI</a></div>
+                                <div class="col-lg-3 m-0">
+                                <a href="" class="btn btn-default pull-right bg-purple"><i class="fad fa-arrow-circle-right fa-lg"></i></a>
+                                </div>
+                            </li>
+                            {% endfor %}
+                    {% endif %}
+                    <li class="bg-secondary">
+                        <a href="">Ver todas las tareas<i class="fad fa-arrow-circle-right text-white fa-lg pull-right"></i></a>
+                    </li>
+                </ul>
+            </li>
+            <!-- inbox dropdown end -->
+            <!-- notification dropdown start-->
+            <li id="header_notification_bar" class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <i class="far fa-bell-on"></i>
+                    {% comment %} Contador de notificaciones {% endcomment %}
+                    <span class="badge bg-secondary">{{ navbar_numero_notificaciones }}</span>
+                </a>
+                <ul class="dropdown-menu extended inbox">
+                    <div class="notify-arrow notify-arrow-purple"></div>
+                    <li>
+                        {% comment %} Contador dinamico de notificaciones {% endcomment %}
+                        <p class="purple">Tienes {{ navbar_numero_notificaciones }} nuevas notificaciones</p>
+                    </li>
+
+                    {% if navbar_notificaciones %}
+                        {% for notificacion in navbar_notificaciones %}
+                            <li>
+                                <a href="">
+                                    <span class="subject p-0">
+                                        <span class="from"><i class="fad fa-sparkles {% if notificacion.estatus__estatus == 'Leido' %} text-dark {% else %} text-success {% endif %}"></i></span>
+                                        {{ notificacion.notificacion__mensaje|capfirst|truncatechars:35 }}
+                                        <span class="time small italic status {% if notificacion.estatus__estatus == 'Leido' %} leido {% else %} no-leido {% endif %} ">
+                                        {% comment %} {% if notificacion.estatus__estatus == 'Leido' %} Leído {% else %}{{ notificacion.estatus__estatus|capfirst }} {% endif %}  {% endcomment %}
+                                        </span>
+                                    </span>
+                                        {% if notificacion.notificacion__nombre_px %}
+                                        <span class="message"> Px: {{ notificacion.notificacion__nombre_px|capfirst|truncatechars:25 }}</span>
+                                    {% endif %}
+                                    
+                                </a>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+
+                    <li>
+                        <a href="">Ver todas las notificaciones <i class="fad fa-arrow-circle-right text-white fa-lg pull-right ver-todas"></i></a>
+                    </li>
+                </ul>
+            </li>
+            <!-- notification dropdown end -->
+        </ul>
+        <!--  notification end -->
+    </div>
+    <div class="top-nav ">
+        <!--search & user info start-->
+        <ul class="nav pull-right top-menu">
+            <li>
+                <input type="text" class="form-control search d-none" placeholder="Buscar">
+            </li>
+            <!-- user login dropdown start-->
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <img alt="Usuario" src="{% static 'images/user.jpg' %}" style="max-width: 35px;" class="rounded">
+                    <span class="username" id="nameUserMaster" >  {{ request.session.nombre_usuario }} </span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu extended dropdown-menu-right">
+                    <div class="log-arrow-up"></div>
+                    <li><a href="#" class="d-none"><i class="fa fa-cog"></i>Configuración</a></li>
+                    <li><a href=""><i class="far fa-bell"></i>  Notificaciones</a></li>
+                    <li><a href=""><i class="fad fa-user"></i> Perfil</a></li>
+                    <li><a href=""><i class="fas fa-power-off"></i>  Cerrar Sesión</a></li>
+                </ul>
+            </li>
+            <!-- user login dropdown end -->
+        </ul>
+        <!--search & user info end-->
+    </div>
+</header>
+<!--header end-->
