@@ -7,8 +7,10 @@ db_connection = create_engine(db_connection_str)
 
 conn = db_connection.connect()
 
-df = pd.read_sql('SELECT * FROM Escuela', con=conn)
+df_TOTAL = pd.read_sql('SELECT * FROM Persona', con=conn)
+df_Tomas = pd.read_sql('SELECT * FROM Persona WHERE idPersona = 192667', con=conn)
 
 conn.close()
 
-print(df)
+print(df_TOTAL)
+print(df_Tomas)
